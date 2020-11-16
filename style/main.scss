@@ -1,0 +1,43 @@
+.hidden{
+    display: none;
+}
+
+.pregunta{
+    background-color: #474747;
+}
+.contenido__pregunta{
+    width: 100%;
+    height: 20vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido__cont{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.contenido__respuesta1{
+    width: 50%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.contenido__respuesta2{
+    width: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        cursor: pointer;
+    }
+}
