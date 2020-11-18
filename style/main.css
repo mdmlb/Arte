@@ -1,14 +1,81 @@
-.hidden {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+.inicio {
+  background-image: url("../resources/fondoInicio.jpg");
+  background-size: cover;
+  height: 98vh;
+  width: 100%;
+}
+
+.inicio__button {
+  background-image: url(../resources/boton.png);
+  background-size: cover;
+  position: fixed;
+  top: 292px;
+  right: 564px;
+  width: 221px;
+  height: 51px;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+
+.inicio__button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.instrucciones {
+  background-image: url("../resources/fondoInstrucciones.jpg");
+  background-size: cover;
+  height: 98vh;
+  width: 100%;
+}
+
+.instrucciones__button {
+  background-image: url("../resources/botonJugar.png");
+  background-size: cover;
+  position: fixed;
+  top: 550px;
+  right: 208px;
+  width: 387px;
+  height: 51px;
+  border: 0;
+  border-radius: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+
+.instrucciones__button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contenido__sele {
   display: none;
+  position: relative;
+}
+
+.contenido__sele2 {
+  display: none;
+  position: relative;
 }
 
 .pregunta {
-  background-color: #474747;
+  background-image: url("../resources/fondoJuego.jpg");
+  background-size: 65%;
+  background-position: 50% 16%;
 }
 
 .contenido__pregunta {
   width: 100%;
-  height: 20vh;
+  height: 17.95vh;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,8 +100,11 @@
 }
 
 .contenido__respuesta1 {
+  position: relative;
   width: 50%;
-  background-color: yellow;
+  background-image: url("../resources/bloqueClaro.jpg");
+  background-size: cover;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,15 +114,29 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: "Montserrat";
+  color: #222121;
+  margin: 0px 6px 8px 8px;
 }
 
 .contenido__respuesta1:hover {
   cursor: pointer;
 }
 
+.contenido__respuesta1:hover .contenido__sele {
+  display: block;
+  position: absolute;
+  width: 20%;
+  right: 16px;
+  bottom: 26px;
+}
+
 .contenido__respuesta2 {
+  position: relative;
+  background-image: url("../resources/bloqueRojo.jpg");
+  background-size: cover;
+  background-position: center;
   width: 50%;
-  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,9 +146,40 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: "Montserrat";
+  color: #222121;
+  margin: 0px 8px 8px 6px;
 }
 
 .contenido__respuesta2:hover {
   cursor: pointer;
+}
+
+.contenido__respuesta2:hover .contenido__sele2 {
+  display: block;
+  position: absolute;
+  width: 20%;
+  right: 16px;
+  bottom: 26px;
+}
+
+.contenido__opcion1 {
+  font-size: 29px;
+  width: 388px;
+  text-align: center;
+}
+
+.contenido__opcion2 {
+  font-size: 29px;
+  width: 388px;
+  text-align: center;
+}
+
+.final {
+  background-image: url("../resources/fondoFinal.jpg");
+  background-size: 90%;
+  background-position: center;
+  height: 98vh;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

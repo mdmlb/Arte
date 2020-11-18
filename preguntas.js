@@ -3,9 +3,28 @@ let contador = 0;
 let texto1Actual;
 let texto2Actual;
 
+let solo = false;
+let muertos = false;
+let robot = false;
+let frankenstein = false;
+let pandemia = false;
+let fin = false;
+
+let izquierda;
+let derecha;
+
+let respt1;
+let respt2;
+let respt3;
+let respt4;
+let respt5;
+let respt6;
+let respt7;
+let respt8;
+
 let preguntas = [
     {
-        respuesta1: 'A un profesor con buena actitud que no sepa explicar.',
+        respuesta1: 'Un profesor con buena actitud que no sepa explicar.',
         respuesta2: 'Un profesor con mala actitud que explique bien.',
     },
     {
@@ -75,8 +94,6 @@ function cambiarTexto() {
         text1.innerHTML = texto1Actual.respuesta1;
         text2.innerHTML = texto2Actual.respuesta2;
     }
-
-
 }
 
 cambiarTexto();
@@ -84,24 +101,76 @@ cambiarTexto();
 const btn1 = document.querySelector('.contenido__respuesta1');
 const btn2 = document.querySelector('.contenido__respuesta2');
 
-btn1.addEventListener('click', function(){
-    if(contador < 14){
+btn1.addEventListener('click', function (event) {
+    if (contador < 15) {
         cambiarTexto();
         contador++;
     } else {
-        window.location.href = './index.html';
+        //window.location.href = './final.html';
     }
+
+    izquierda = event.target.getAttribute('class');
+
+    validacion();
+
 });
 
-btn2.addEventListener('click', function(){
-    if(contador < 14){
+btn2.addEventListener('click', function (event) {
+    if (contador < 15) {
         cambiarTexto();
         contador++;
     } else {
-        window.location.href = './index.html';
+        window.location.href = './final.html';
     }
 
-    if(contador == 10){
-    
+    derecha = event.target.getAttribute('class');
+
+    if (contador == 13 && derecha == 'contenido__respuesta2') {
+        robot = true;
+        myFunction(robot);
+    } else if (contador == 14 && derecha == 'contenido__respuesta2') {
+        muertos = true;
+        myFunction(muertos);
+    } else if (contador == 15 && derecha == 'contenido__respuesta2') {
+        pandemia = true;
+        myFunction(pandemia);
     }
 });
+
+function myFunction(bye) {
+    //console.log(bye);
+    bye = true;
+}
+
+console.log(frankenstein);
+console.log(solo);
+console.log(fin);
+
+function elfran() {
+    if (frankenstein) {
+        console.log("no funcionará");
+    }
+}
+
+elfran();
+
+
+function validacion() {
+    if (contador == 13 && izquierda == 'contenido__respuesta1') {
+        frankenstein = true;
+        myFunction(frankenstein);
+        console.log("hola",frankenstein);
+    } else if (contador == 14 && izquierda == 'contenido__respuesta1') {
+        solo = true;
+        myFunction(solo);
+        console.log("hola",solo);
+    } else if (contador == 15 && izquierda == 'contenido__respuesta1') {
+        fin = true;
+        myFunction(fin);
+        console.log("hola",fin);
+    }
+
+    if (frankenstein == true && solo == true && fin == true) {
+        console.log("no funcionará");
+    }    
+}
