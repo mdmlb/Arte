@@ -111,7 +111,8 @@ btn1.addEventListener('click', function (event) {
 
     izquierda = event.target.getAttribute('class');
 
-    validacion();
+    validacion1();
+    resultados();
 
 });
 
@@ -120,21 +121,13 @@ btn2.addEventListener('click', function (event) {
         cambiarTexto();
         contador++;
     } else {
-        window.location.href = './final.html';
+        //window.location.href = './final.html';
     }
 
     derecha = event.target.getAttribute('class');
 
-    if (contador == 13 && derecha == 'contenido__respuesta2') {
-        robot = true;
-        myFunction(robot);
-    } else if (contador == 14 && derecha == 'contenido__respuesta2') {
-        muertos = true;
-        myFunction(muertos);
-    } else if (contador == 15 && derecha == 'contenido__respuesta2') {
-        pandemia = true;
-        myFunction(pandemia);
-    }
+    validacion2();
+    resultados();
 });
 
 function myFunction(bye) {
@@ -146,31 +139,73 @@ console.log(frankenstein);
 console.log(solo);
 console.log(fin);
 
-function elfran() {
-    if (frankenstein) {
-        console.log("no funcionará");
-    }
-}
-
-elfran();
-
-
-function validacion() {
+function validacion1 () {
     if (contador == 13 && izquierda == 'contenido__respuesta1') {
         frankenstein = true;
         myFunction(frankenstein);
-        console.log("hola",frankenstein);
+        console.log("fran",frankenstein);
     } else if (contador == 14 && izquierda == 'contenido__respuesta1') {
         solo = true;
         myFunction(solo);
-        console.log("hola",solo);
+        console.log("solo",solo);
     } else if (contador == 15 && izquierda == 'contenido__respuesta1') {
         fin = true;
         myFunction(fin);
-        console.log("hola",fin);
+        console.log("fin",fin);
+    }
+ 
+}
+
+function validacion2 () {
+    if (contador == 13 && derecha == 'contenido__respuesta2') {
+        robot = true;
+        myFunction(robot);
+        console.log("robot",robot);
+    } else if (contador == 14 && derecha == 'contenido__respuesta2') {
+        muertos = true;
+        myFunction(muertos);
+        console.log("muerto",muertos);
+    } else if (contador == 15 && derecha == 'contenido__respuesta2') {
+        pandemia = true;
+        myFunction(pandemia);
+        console.log("pandemia",pandemia);
     }
 
+}
+
+function resultados() {
+    //FRANK
     if (frankenstein == true && solo == true && fin == true) {
-        console.log("no funcionará");
-    }    
+        console.log("Fran + solo + fin del mundo");
+    }
+    
+    if (frankenstein == true && muertos == true && fin == true) {
+        console.log("Fran + niños muertos + fin del mundo");
+    }  
+
+    if (frankenstein == true && solo == true && pandemia == true) {
+        console.log("Fran + solo + pandemia");
+    }
+
+    if (frankenstein == true && muertos == true && pandemia == true) {
+        console.log("Fran + niños muertos + pandemia");
+    } 
+
+    //SOLO
+    if (robot == true && solo == true && fin == true) {
+        console.log("robot + solo + fin del mundo");
+    }
+    
+    if (robot == true && muertos == true && fin == true) {
+        console.log("robot + niños muertos + fin del mundo");
+    }  
+
+    if (robot == true && solo == true && pandemia == true) {
+        console.log("robot + solo + pandemia");
+        ///////funciona
+    }
+
+    if (robot == true && muertos == true && pandemia == true) {
+        console.log("robot + niños muertos + pandemia");
+    }
 }
