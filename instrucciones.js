@@ -1,7 +1,7 @@
 const btnStart = document.querySelector('.instrucciones__button');
 
 function preload() {
-    sonido = loadSound('../resources/Almost.mp3');
+    sonido = loadSound('./resources/Almost.mp3');
 }
 
 function setup() {

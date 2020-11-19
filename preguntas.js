@@ -87,8 +87,8 @@ const text1 = document.querySelector('.contenido__opcion1');
 const text2 = document.querySelector('.contenido__opcion2');
 
 function preload() {
-    sonido = loadSound('../resources/videoplayback.mp3');
-    kick = loadSound('../resources/kick.mp3')
+    sonido = loadSound('./resources/videoplayback.mp3');
+    kick = loadSound('./resources/kick.mp3')
 }
 
 function setup() {
