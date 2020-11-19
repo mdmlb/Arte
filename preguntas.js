@@ -86,6 +86,15 @@ const velocidad = 10000;
 const text1 = document.querySelector('.contenido__opcion1');
 const text2 = document.querySelector('.contenido__opcion2');
 
+function preload() {
+    sonido = loadSound('./../../data/FINAL_01-01.mp3');
+}
+
+function setup() {
+    sonido.setVolume(30);
+    sonido.loop();
+}
+
 function cambiarTexto() {
     if (contador < 14) {
         texto1Actual = preguntas[contador];
@@ -104,7 +113,8 @@ const btn2 = document.querySelector('.contenido__respuesta2');
 btn1.addEventListener('click', function (event) {
     if (contador < 15) {
         cambiarTexto();
-        contador++;
+        contadorA();
+        console.log(contador);
     } else {
         //window.location.href = './final.html';
     }
@@ -119,7 +129,8 @@ btn1.addEventListener('click', function (event) {
 btn2.addEventListener('click', function (event) {
     if (contador < 15) {
         cambiarTexto();
-        contador++;
+        contadorA();
+        console.log(contador);
     } else {
         //window.location.href = './final.html';
     }
@@ -131,7 +142,6 @@ btn2.addEventListener('click', function (event) {
 });
 
 function myFunction(bye) {
-    //console.log(bye);
     bye = true;
 }
 
@@ -139,36 +149,40 @@ console.log(frankenstein);
 console.log(solo);
 console.log(fin);
 
-function validacion1 () {
+function contadorA() {
+    contador++;
+}
+
+function validacion1() {
     if (contador == 13 && izquierda == 'contenido__respuesta1') {
         frankenstein = true;
         myFunction(frankenstein);
-        console.log("fran",frankenstein);
+        console.log("fran", frankenstein);
     } else if (contador == 14 && izquierda == 'contenido__respuesta1') {
         solo = true;
         myFunction(solo);
-        console.log("solo",solo);
+        console.log("solo", solo);
     } else if (contador == 15 && izquierda == 'contenido__respuesta1') {
         fin = true;
         myFunction(fin);
-        console.log("fin",fin);
+        console.log("fin", fin);
     }
- 
+
 }
 
-function validacion2 () {
+function validacion2() {
     if (contador == 13 && derecha == 'contenido__respuesta2') {
         robot = true;
         myFunction(robot);
-        console.log("robot",robot);
+        console.log("robot", robot);
     } else if (contador == 14 && derecha == 'contenido__respuesta2') {
         muertos = true;
         myFunction(muertos);
-        console.log("muerto",muertos);
+        console.log("muerto", muertos);
     } else if (contador == 15 && derecha == 'contenido__respuesta2') {
         pandemia = true;
         myFunction(pandemia);
-        console.log("pandemia",pandemia);
+        console.log("pandemia", pandemia);
     }
 
 }
@@ -178,10 +192,10 @@ function resultados() {
     if (frankenstein == true && solo == true && fin == true) {
         console.log("Fran + solo + fin del mundo");
     }
-    
+
     if (frankenstein == true && muertos == true && fin == true) {
         console.log("Fran + niños muertos + fin del mundo");
-    }  
+    }
 
     if (frankenstein == true && solo == true && pandemia == true) {
         console.log("Fran + solo + pandemia");
@@ -189,16 +203,16 @@ function resultados() {
 
     if (frankenstein == true && muertos == true && pandemia == true) {
         console.log("Fran + niños muertos + pandemia");
-    } 
+    }
 
     //SOLO
     if (robot == true && solo == true && fin == true) {
         console.log("robot + solo + fin del mundo");
     }
-    
+
     if (robot == true && muertos == true && fin == true) {
         console.log("robot + niños muertos + fin del mundo");
-    }  
+    }
 
     if (robot == true && solo == true && pandemia == true) {
         console.log("robot + solo + pandemia");
