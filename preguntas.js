@@ -87,10 +87,12 @@ const text1 = document.querySelector('.contenido__opcion1');
 const text2 = document.querySelector('.contenido__opcion2');
 
 function preload() {
-    sonido = loadSound('./../../data/FINAL_01-01.mp3');
+    sonido = loadSound('../resources/videoplayback.mp3');
+    kick = loadSound('../resources/kick.mp3')
 }
 
 function setup() {
+    kick.setVolume(10);
     sonido.setVolume(30);
     sonido.loop();
 }
@@ -115,15 +117,13 @@ btn1.addEventListener('click', function (event) {
         cambiarTexto();
         contadorA();
         console.log(contador);
-    } else {
-        //window.location.href = './final.html';
     }
 
     izquierda = event.target.getAttribute('class');
 
     validacion1();
     resultados();
-
+    kick.play();
 });
 
 btn2.addEventListener('click', function (event) {
@@ -131,14 +131,13 @@ btn2.addEventListener('click', function (event) {
         cambiarTexto();
         contadorA();
         console.log(contador);
-    } else {
-        //window.location.href = './final.html';
     }
 
     derecha = event.target.getAttribute('class');
 
     validacion2();
     resultados();
+    kick.play();
 });
 
 function myFunction(bye) {
@@ -187,39 +186,57 @@ function validacion2() {
 
 }
 
+const final = document.querySelector('.final');
+const resultadoFinal = document.querySelector('.final__respuesta');
+
 function resultados() {
     //FRANK
     if (frankenstein == true && solo == true && fin == true) {
         console.log("Fran + solo + fin del mundo");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/frank-fin-solo.jpg");
     }
 
     if (frankenstein == true && muertos == true && fin == true) {
         console.log("Fran + niños muertos + fin del mundo");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/frank-fin-muerto.jpg");
     }
 
     if (frankenstein == true && solo == true && pandemia == true) {
         console.log("Fran + solo + pandemia");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/frank-virus-solo.jpg");
     }
 
     if (frankenstein == true && muertos == true && pandemia == true) {
         console.log("Fran + niños muertos + pandemia");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/frank-virus-muerto.jpg");
     }
 
     //SOLO
     if (robot == true && solo == true && fin == true) {
         console.log("robot + solo + fin del mundo");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/robot-fin-solo.jpg");
     }
 
     if (robot == true && muertos == true && fin == true) {
         console.log("robot + niños muertos + fin del mundo");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/robot-fin-muerto.jpg");
     }
 
     if (robot == true && solo == true && pandemia == true) {
         console.log("robot + solo + pandemia");
-        ///////funciona
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/robot-virus-solo.jpg");
     }
 
     if (robot == true && muertos == true && pandemia == true) {
         console.log("robot + niños muertos + pandemia");
+        final.classList.add('final--show');
+        resultadoFinal.setAttribute('src', "./resources/robot-virus-muerto.jpg");
     }
 }

@@ -1,7 +1,7 @@
 const btnStart = document.querySelector('.inicio__button');
 
 function preload() {
-    sonido = loadSound('./../../data/FINAL_01-01.mp3');
+    sonido = loadSound('../resources/inicio.mp3');
 }
 
 function setup() {
