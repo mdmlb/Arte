@@ -153,15 +153,17 @@ function contadorA() {
 }
 
 function validacion1() {
-    if (contador == 13 && izquierda == 'contenido__respuesta1') {
+    if (contador == 13) {
         frankenstein = true;
         myFunction(frankenstein);
         console.log("fran", frankenstein);
-    } else if (contador == 14 && izquierda == 'contenido__respuesta1') {
+    }
+    if (contador == 14) {
         solo = true;
         myFunction(solo);
         console.log("solo", solo);
-    } else if (contador == 15 && izquierda == 'contenido__respuesta1') {
+    }
+    if (contador == 15) {
         fin = true;
         myFunction(fin);
         console.log("fin", fin);
@@ -170,15 +172,17 @@ function validacion1() {
 }
 
 function validacion2() {
-    if (contador == 13 && derecha == 'contenido__respuesta2') {
+    if (contador == 13) {
         robot = true;
         myFunction(robot);
         console.log("robot", robot);
-    } else if (contador == 14 && derecha == 'contenido__respuesta2') {
+    }
+    if (contador == 14) {
         muertos = true;
         myFunction(muertos);
         console.log("muerto", muertos);
-    } else if (contador == 15 && derecha == 'contenido__respuesta2') {
+    }
+    if (contador == 15) {
         pandemia = true;
         myFunction(pandemia);
         console.log("pandemia", pandemia);
