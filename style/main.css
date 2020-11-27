@@ -444,4 +444,18 @@ main {
 .final__respuesta {
   height: 100vh;
 }
+
+.final .link {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 666px;
+}
+
+.final .link2 {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 626px;
+}
 /*# sourceMappingURL=main.css.map */
